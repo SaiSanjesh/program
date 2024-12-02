@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form</title>
+</head>
+<body>
+  <h1>Simple Form</h1>
+
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age"><br><br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select><br><br>
+
+    <button type="button" onclick="showMessage()">Submit</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    function showMessage() {
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+
+      if (name && age) {
+        document.getElementById('message').textContent = 
+          `Hello, ${name}! You are ${age} years old and your gender is ${gender}.`;
+      } else {
+        document.getElementById('message').textContent = "Please fill out all fields.";
+      }
+    }
+  </script>
+</body>
+</html>

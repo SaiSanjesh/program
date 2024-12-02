@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <title>Color Picker</title>
+</head>
+
+
+<body>
+  <h1>Color Picker</h1>
+
+  <div id="colorDisplay" style="width: 200px; height: 200px; border: 1px ;"></div>
+  
+  <label>Red:</label>
+  <input type="range" id="red" min="0" max="255" value="0"><br>
+  
+  <label>Green:</label>
+  <input type="range" id="green" min="0" max="255" value="0"><br>
+  
+  <label>Blue:</label>
+  <input type="range" id="blue" min="0" max="255" value="0"><br>
+
+  <script>
+    const red = document.getElementById('red');
+    const green = document.getElementById('green');
+    const blue = document.getElementById('blue');
+    const colorDisplay = document.getElementById('colorDisplay');
+
+    function updateColor() {
+      colorDisplay.style.backgroundColor = `rgb(${red.value}, ${green.value}, ${blue.value})`;
+    }
+
+    red.addEventListener('input', updateColor);
+    green.addEventListener('input', updateColor);
+    blue.addEventListener('input', updateColor);
+
+    updateColor(); // Initialize color
+  </script>
+</body>
+</html>
